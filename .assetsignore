@@ -4,3 +4,4 @@
 serve.js
 wrangler.toml
 README.md
+worker.js
