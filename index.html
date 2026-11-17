@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ashween Singh Saini (Gabruu.Saini) — Computer Science &amp; Systems Engineering</title>
+  <meta name="description" content="Personal About Me website of Ashween Singh Saini (Gabruu.Saini) at gabruu-saini.online. Computer Science student, systems programmer, and offensive security researcher linking to the live ISC CS Platform at cs.gabruu-saini.online.">
+  <meta name="theme-color" content="#030014">
+
+  <!-- Favicon: Inline Data-URI & SVG File -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Typography: Plus Jakarta Sans, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- WebGL2 Active Cosmic Pulsar Star & Relativistic Jet Canvas -->
+  <canvas id="pulsar-canvas" aria-hidden="true"></canvas>
+
+  <!-- Cosmic Boot Splash (~600ms auto-dismiss) -->
+  <div id="app-boot-loader" class="app-boot-overlay" role="status" aria-live="polite">
+    <div class="boot-ambient-glow" aria-hidden="true"></div>
+    <div class="boot-brand-lockup">
+      <!-- Exact Gabruu.Saini Vector Lockup -->
+      <div class="boot-figma-container">
+        <svg class="boot-figma-svg" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <g clip-path="url(#boot-clip)">
+            <rect width="640" height="360" fill="#030014"/>
+            <foreignObject x="0" y="0" width="640" height="360" overflow="visible">
+              <div xmlns="http://www.w3.org/1999/xhtml" style="position:relative;width:640px;height:360px">
+                <div style="position:absolute;left:0;top:0;margin:0;width:640px;height:360px;transform-origin:0 0;perspective:1100px">
+                  <div class="boot-ribbon-motion" style="position:absolute;left:0;top:0;margin:0;width:205px;height:107px;transform-origin:0 0;transform:matrix(1, 0, 0, 1, 194, 126.5) translate(50%, 50%) translateZ(2px) rotateX(3deg) rotateY(-4deg) translate(-50%, -50%)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="205" height="107" overflow="visible">
+                      <defs>
+                        <linearGradient id="boot-ribbon-grad" x1="20.48" y1="21.4" x2="104.12" y2="141.47" gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#152B35"/>
+                          <stop offset="0.30" stop-color="#2B535E"/>
+                          <stop offset="0.52" stop-color="#42656F"/>
+                          <stop offset="0.64" stop-color="#1B3B49"/>
+                          <stop offset="1" stop-color="#102330"/>
+                        </linearGradient>
+                        <linearGradient id="boot-ribbon-stroke" x1="102.4" y1="0" x2="102.4" y2="107" gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#BDE2DD" stop-opacity="0.45"/>
+                          <stop offset="0.45" stop-color="#7BA8BA" stop-opacity="0.12"/>
+                          <stop offset="1" stop-color="#7F6CA3" stop-opacity="0.25"/>
+                        </linearGradient>
+                      </defs>
+                      <path d="M168 102C84.8327 20.1765 46.6169 40.4622 28.6267 107C-46.3326 79.126 49.6152 25.5744 49.6152 0C54.6125 6.29412 149.93 37.2353 21 75C84.9652 101.975 287 -29 168 102Z" fill="url(#boot-ribbon-grad)" stroke="url(#boot-ribbon-stroke)" stroke-width="1.3"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </foreignObject>
+            <!-- Vector Typography: Saini (Cyan-Teal #91BAC1) -->
+            <path d="M365.28 174.8C364.24 174.267 363.133 173.813 361.96 173.44C360.787 173.04 359.667 172.84 358.6 172.84C357.16 172.84 356.013 173.16 355.16 173.8C354.333 174.44 353.92 175.32 353.92 176.44C353.92 177.24 354.213 177.947 354.8 178.56C355.387 179.147 356.133 179.667 357.04 180.12C357.947 180.547 358.907 180.96 359.92 181.36C360.8 181.68 361.667 182.067 362.52 182.52C363.4 182.947 364.187 183.48 364.88 184.12C365.573 184.76 366.12 185.56 366.52 186.52C366.947 187.453 367.16 188.613 367.16 190C367.16 191.52 366.773 192.92 366 194.2C365.227 195.453 364.12 196.453 362.68 197.2C361.24 197.947 359.48 198.32 357.4 198.32C356.2 198.32 355.013 198.187 353.84 197.92C352.693 197.653 351.6 197.293 350.56 196.84C349.52 196.36 348.56 195.827 347.68 195.24L349.76 191.6C350.4 192.08 351.133 192.52 351.96 192.92C352.787 193.32 353.64 193.64 354.52 193.88C355.4 194.093 356.227 194.2 357 194.2C357.827 194.2 358.64 194.067 359.44 193.8C360.267 193.533 360.947 193.093 361.48 192.48C362.04 191.867 362.32 191.053 362.32 190.04C362.32 189.213 362.08 188.507 361.6 187.92C361.12 187.333 360.493 186.827 359.72 186.4C358.973 185.947 358.147 185.547 357.24 185.2C356.333 184.853 355.4 184.467 354.44 184.04C353.507 183.613 352.64 183.093 351.84 182.48C351.04 181.84 350.387 181.067 349.88 180.16C349.373 179.253 349.12 178.133 349.12 176.8C349.12 175.2 349.493 173.813 350.24 172.64C350.987 171.467 352.013 170.533 353.32 169.84C354.653 169.147 356.187 168.773 357.92 168.72C359.973 168.72 361.72 168.973 363.16 169.48C364.627 169.96 365.92 170.547 367.04 171.24L365.28 174.8ZM379.481 198.44C377.881 198.44 376.428 198.107 375.121 197.44C373.841 196.773 372.828 195.787 372.081 194.48C371.335 193.147 370.961 191.507 370.961 189.56C370.961 187.64 371.348 186 372.121 184.64C372.921 183.253 373.961 182.187 375.241 181.44C376.548 180.693 377.961 180.32 379.481 180.32C381.108 180.32 382.415 180.64 383.401 181.28C384.415 181.92 385.201 182.68 385.761 183.56L385.521 184.2L385.961 181.08H390.081V198H385.601V193.88L386.041 194.96C385.935 195.12 385.721 195.387 385.401 195.76C385.081 196.107 384.641 196.493 384.081 196.92C383.521 197.347 382.855 197.707 382.081 198C381.335 198.293 380.468 198.44 379.481 198.44ZM380.721 194.76C381.521 194.76 382.241 194.613 382.881 194.32C383.548 194.027 384.108 193.613 384.561 193.08C385.041 192.547 385.388 191.907 385.601 191.16V187.48C385.388 186.787 385.041 186.187 384.561 185.68C384.081 185.147 383.495 184.733 382.801 184.44C382.135 184.147 381.388 184 380.561 184C379.655 184 378.815 184.227 378.041 184.68C377.268 185.133 376.641 185.76 376.161 186.56C375.708 187.36 375.481 188.28 375.481 189.32C375.481 190.333 375.721 191.253 376.201 192.08C376.681 192.907 377.321 193.56 378.121 194.04C378.921 194.52 379.788 194.76 380.721 194.76ZM396.268 181.08H400.748V198H396.268V181.08ZM396.068 175.04C396.068 174.347 396.334 173.773 396.868 173.32C397.428 172.867 398.028 172.64 398.667 172.64C399.307 172.64 399.881 172.867 400.388 173.32C400.921 173.773 401.188 174.347 401.188 175.04C401.188 175.733 400.921 176.307 400.388 176.76C399.881 177.187 399.307 177.4 398.667 177.4C398.028 177.4 397.428 177.173 396.868 176.72C396.334 176.267 396.068 175.707 396.068 175.04ZM410.933 181.08L411.332 184.72L411.173 184.24C411.759 183.067 412.626 182.133 413.772 181.44C414.946 180.72 416.333 180.36 417.933 180.36C419.533 180.36 420.853 180.827 421.893 181.76C422.933 182.693 423.466 183.92 423.493 185.44V198H419.013V187.04C418.986 186.187 418.746 185.507 418.293 185C417.839 184.467 417.119 184.187 416.132 184.16C415.226 184.16 414.412 184.44 413.692 185C412.973 185.533 412.399 186.28 411.973 187.24C411.573 188.173 411.372 189.253 411.372 190.48V198H406.893V181.08H410.933ZM429.666 181.08H434.146V198H429.666V181.08ZM429.466 175.04C429.466 174.347 429.733 173.773 430.266 173.32C430.826 172.867 431.426 172.64 432.066 172.64C432.706 172.64 433.279 172.867 433.786 173.32C434.319 173.773 434.586 174.347 434.586 175.04C434.586 175.733 434.319 176.307 433.786 176.76C433.279 177.187 432.706 177.4 432.066 177.4C431.426 177.4 430.826 177.173 430.266 176.72C429.733 176.267 429.466 175.707 429.466 175.04Z" fill="#91BAC1"/>
+            <!-- Vector Typography: Gabruu. (Warm Cream #D5C5AA) -->
+            <path d="M226.68 185.04C226.333 185.413 225.787 185.8 225.04 186.2C224.293 186.573 223.427 186.92 222.44 187.24C221.48 187.56 220.493 187.813 219.48 188C218.467 188.213 217.507 188.32 216.6 188.32C214.2 188.32 212.04 187.973 210.12 187.28C208.2 186.56 206.56 185.573 205.2 184.32C203.84 183.04 202.8 181.533 202.08 179.8C201.36 178.067 201 176.173 201 174.12C201 171.427 201.4 169.093 202.2 167.12C203.027 165.12 204.133 163.467 205.52 162.16C206.933 160.827 208.547 159.84 210.36 159.2C212.2 158.56 214.12 158.24 216.12 158.24C218.013 158.24 219.747 158.453 221.32 158.88C222.893 159.28 224.227 159.787 225.32 160.4L223.44 165.8C222.96 165.533 222.32 165.267 221.52 165C220.72 164.733 219.907 164.52 219.08 164.36C218.253 164.173 217.52 164.08 216.88 164.08C215.28 164.08 213.867 164.28 212.64 164.68C211.413 165.08 210.373 165.68 209.52 166.48C208.693 167.28 208.067 168.28 207.64 169.48C207.213 170.653 207 172.027 207 173.6C207 174.987 207.24 176.24 207.72 177.36C208.2 178.453 208.867 179.387 209.72 180.16C210.6 180.933 211.627 181.52 212.8 181.92C214 182.32 215.32 182.52 216.76 182.52C217.587 182.52 218.347 182.467 219.04 182.36C219.733 182.227 220.32 182.027 220.8 181.76V178.2H215.72V172.6H226.68V185.04ZM239.709 188.48C238.082 188.48 236.602 188.16 235.269 187.52C233.962 186.853 232.922 185.84 232.149 184.48C231.375 183.12 230.989 181.387 230.989 179.28C230.989 177.307 231.389 175.6 232.189 174.16C232.989 172.72 234.042 171.613 235.349 170.84C236.655 170.04 238.042 169.64 239.509 169.64C241.242 169.64 242.549 169.933 243.429 170.52C244.335 171.08 245.082 171.707 245.669 172.4L245.429 173.08L245.949 170.52H251.149V188H245.549V184.2L245.989 185.4C245.935 185.4 245.775 185.56 245.509 185.88C245.242 186.173 244.842 186.533 244.309 186.96C243.802 187.36 243.162 187.707 242.389 188C241.642 188.32 240.749 188.48 239.709 188.48ZM241.309 183.92C241.975 183.92 242.575 183.827 243.109 183.64C243.642 183.427 244.109 183.133 244.509 182.76C244.909 182.36 245.255 181.867 245.549 181.28V177C245.335 176.413 245.015 175.92 244.589 175.52C244.162 175.093 243.655 174.773 243.069 174.56C242.482 174.32 241.829 174.2 241.109 174.2C240.309 174.2 239.562 174.413 238.869 174.84C238.202 175.24 237.669 175.8 237.269 176.52C236.869 177.24 236.669 178.067 236.669 179C236.669 179.933 236.882 180.773 237.309 181.52C237.735 182.267 238.295 182.853 238.989 183.28C239.709 183.707 240.482 183.92 241.309 183.92ZM268.399 188.48C266.932 188.48 265.692 188.24 264.679 187.76C263.692 187.253 262.826 186.6 262.079 185.8L262.519 184.6V188H256.919V156.44H262.479V173.52V171.72C263.172 171.133 264.092 170.64 265.239 170.24C266.386 169.84 267.692 169.64 269.159 169.64C270.679 169.64 272.066 170 273.319 170.72C274.572 171.44 275.572 172.493 276.319 173.88C277.092 175.24 277.479 176.907 277.479 178.88C277.479 180.853 277.052 182.56 276.199 184C275.372 185.44 274.266 186.547 272.879 187.32C271.492 188.093 269.999 188.48 268.399 188.48ZM267.159 183.76C267.986 183.76 268.746 183.547 269.439 183.12C270.159 182.693 270.732 182.107 271.159 181.36C271.586 180.613 271.799 179.773 271.799 178.84C271.799 177.907 271.586 177.08 271.159 176.36C270.732 175.64 270.159 175.08 269.439 174.68C268.746 174.253 267.986 174.04 267.159 174.04C266.439 174.04 265.759 174.16 265.119 174.4C264.506 174.613 263.972 174.933 263.519 175.36C263.092 175.76 262.759 176.253 262.519 176.84V181.12C262.839 181.707 263.212 182.2 263.639 182.6C264.092 182.973 264.612 183.267 265.199 183.48C265.786 183.667 266.439 183.76 267.159 183.76ZM286.92 170.52L287.44 175.32L287.32 174.6C287.827 173.56 288.52 172.68 289.4 171.96C290.28 171.213 291.147 170.64 292 170.24C292.88 169.84 293.547 169.64 294 169.64L293.72 175.24C292.413 175.08 291.293 175.293 290.36 175.88C289.427 176.467 288.707 177.24 288.2 178.2C287.693 179.16 287.44 180.147 287.44 181.16V188H281.88V170.52H286.92ZM303.926 188.84C302.353 188.84 301.033 188.36 299.966 187.4C298.9 186.413 298.34 185.147 298.286 183.6V170.52H303.886V181.52C303.94 182.293 304.14 182.92 304.486 183.4C304.833 183.853 305.42 184.08 306.246 184.08C307.073 184.08 307.78 183.8 308.366 183.24C308.98 182.68 309.446 181.92 309.766 180.96C310.113 179.973 310.286 178.867 310.286 177.64V170.52H315.886V188H310.806L310.366 184.8L310.446 185.16C310.046 185.88 309.54 186.52 308.926 187.08C308.313 187.64 307.58 188.067 306.726 188.36C305.9 188.68 304.966 188.84 303.926 188.84ZM327.286 188.84C325.712 188.84 324.392 188.36 323.326 187.4C322.259 186.413 321.699 185.147 321.646 183.6V170.52H327.246V181.52C327.299 182.293 327.499 182.92 327.846 183.4C328.192 183.853 328.779 184.08 329.606 184.08C330.432 184.08 331.139 183.8 331.726 183.24C332.339 182.68 332.806 181.92 333.126 180.96C333.472 179.973 333.646 178.867 333.646 177.64V170.52H339.246V188H334.166L333.726 184.8L333.806 185.16C333.406 185.88 332.899 186.52 332.286 187.08C331.672 187.64 330.939 188.067 330.086 188.36C329.259 188.68 328.326 188.84 327.286 188.84ZM342.725 185.12C342.725 184.293 343.018 183.6 343.605 183.04C344.218 182.48 344.885 182.2 345.605 182.2C346.272 182.2 346.898 182.48 347.485 183.04C348.098 183.6 348.405 184.293 348.405 185.12C348.405 186 348.098 186.707 347.485 187.24C346.898 187.747 346.272 188 345.605 188C344.885 188 344.218 187.747 343.605 187.24C343.018 186.707 342.725 186 342.725 185.12Z" fill="#D5C5AA"/>
+          </g>
+          <defs>
+            <clipPath id="boot-clip">
+              <rect width="640" height="360" fill="white"/>
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="boot-meta-group">
+        <div class="boot-subtitle">Ashween Singh Saini • Computer Science &amp; Systems</div>
+        <div class="boot-line-track">
+          <div class="boot-line-fill"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reflect-Style Floating Glass Pill Navbar -->
+  <header id="floating-navbar" class="floating-navbar">
+    <div class="navbar-inner glass-panel">
+      <!-- Left: Vector Brand Lockup -->
+      <a href="#" class="nav-brand-lockup" aria-label="Gabruu.Saini Home">
+        <svg class="nav-brand-svg" viewBox="190 126 250 108" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="nav-ribbon-g" x1="20.48" y1="21.4" x2="104.12" y2="141.47" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#152B35"/>
+              <stop offset="0.30" stop-color="#2B535E"/>
+              <stop offset="0.52" stop-color="#42656F"/>
+              <stop offset="0.64" stop-color="#1B3B49"/>
+              <stop offset="1" stop-color="#102330"/>
+            </linearGradient>
+            <linearGradient id="nav-ribbon-s" x1="102.4" y1="0" x2="102.4" y2="107" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#BDE2DD" stop-opacity="0.45"/>
+              <stop offset="0.45" stop-color="#7BA8BA" stop-opacity="0.12"/>
+              <stop offset="1" stop-color="#7F6CA3" stop-opacity="0.25"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(194, 126.5)">
+            <path d="M168 102C84.8327 20.1765 46.6169 40.4622 28.6267 107C-46.3326 79.126 49.6152 25.5744 49.6152 0C54.6125 6.29412 149.93 37.2353 21 75C84.9652 101.975 287 -29 168 102Z" fill="url(#nav-ribbon-g)" stroke="url(#nav-ribbon-s)" stroke-width="1.3"/>
+          </g>
+          <path d="M365.28 174.8C364.24 174.267 363.133 173.813 361.96 173.44C360.787 173.04 359.667 172.84 358.6 172.84C357.16 172.84 356.013 173.16 355.16 173.8C354.333 174.44 353.92 175.32 353.92 176.44C353.92 177.24 354.213 177.947 354.8 178.56C355.387 179.147 356.133 179.667 357.04 180.12C357.947 180.547 358.907 180.96 359.92 181.36C360.8 181.68 361.667 182.067 362.52 182.52C363.4 182.947 364.187 183.48 364.88 184.12C365.573 184.76 366.12 185.56 366.52 186.52C366.947 187.453 367.16 188.613 367.16 190C367.16 191.52 366.773 192.92 366 194.2C365.227 195.453 364.12 196.453 362.68 197.2C361.24 197.947 359.48 198.32 357.4 198.32C356.2 198.32 355.013 198.187 353.84 197.92C352.693 197.653 351.6 197.293 350.56 196.84C349.52 196.36 348.56 195.827 347.68 195.24L349.76 191.6C350.4 192.08 351.133 192.52 351.96 192.92C352.787 193.32 353.64 193.64 354.52 193.88C355.4 194.093 356.227 194.2 357 194.2C357.827 194.2 358.64 194.067 359.44 193.8C360.267 193.533 360.947 193.093 361.48 192.48C362.04 191.867 362.32 191.053 362.32 190.04C362.32 189.213 362.08 188.507 361.6 187.92C361.12 187.333 360.493 186.827 359.72 186.4C358.973 185.947 358.147 185.547 357.24 185.2C356.333 184.853 355.4 184.467 354.44 184.04C353.507 183.613 352.64 183.093 351.84 182.48C351.04 181.84 350.387 181.067 349.88 180.16C349.373 179.253 349.12 178.133 349.12 176.8C349.12 175.2 349.493 173.813 350.24 172.64C350.987 171.467 352.013 170.533 353.32 169.84C354.653 169.147 356.187 168.773 357.92 168.72C359.973 168.72 361.72 168.973 363.16 169.48C364.627 169.96 365.92 170.547 367.04 171.24L365.28 174.8ZM379.481 198.44C377.881 198.44 376.428 198.107 375.121 197.44C373.841 196.773 372.828 195.787 372.081 194.48C371.335 193.147 370.961 191.507 370.961 189.56C370.961 187.64 371.348 186 372.121 184.64C372.921 183.253 373.961 182.187 375.241 181.44C376.548 180.693 377.961 180.32 379.481 180.32C381.108 180.32 382.415 180.64 383.401 181.28C384.415 181.92 385.201 182.68 385.761 183.56L385.521 184.2L385.961 181.08H390.081V198H385.601V193.88L386.041 194.96C385.935 195.12 385.721 195.387 385.401 195.76C385.081 196.107 384.641 196.493 384.081 196.92C383.521 197.347 382.855 197.707 382.081 198C381.335 198.293 380.468 198.44 379.481 198.44ZM380.721 194.76C381.521 194.76 382.241 194.613 382.881 194.32C383.548 194.027 384.108 193.613 384.561 193.08C385.041 192.547 385.388 191.907 385.601 191.16V187.48C385.388 186.787 385.041 186.187 384.561 185.68C384.081 185.147 383.495 184.733 382.801 184.44C382.135 184.147 381.388 184 380.561 184C379.655 184 378.815 184.227 378.041 184.68C377.268 185.133 376.641 185.76 376.161 186.56C375.708 187.36 375.481 188.28 375.481 189.32C375.481 190.333 375.721 191.253 376.201 192.08C376.681 192.907 377.321 193.56 378.121 194.04C378.921 194.52 379.788 194.76 380.721 194.76ZM396.268 181.08H400.748V198H396.268V181.08ZM396.068 175.04C396.068 174.347 396.334 173.773 396.868 173.32C397.428 172.867 398.028 172.64 398.667 172.64C399.307 172.64 399.881 172.867 400.388 173.32C400.921 173.773 401.188 174.347 401.188 175.04C401.188 175.733 400.921 176.307 400.388 176.76C399.881 177.187 399.307 177.4 398.667 177.4C398.028 177.4 397.428 177.173 396.868 176.72C396.334 176.267 396.068 175.707 396.068 175.04ZM410.933 181.08L411.332 184.72L411.173 184.24C411.759 183.067 412.626 182.133 413.772 181.44C414.946 180.72 416.333 180.36 417.933 180.36C419.533 180.36 420.853 180.827 421.893 181.76C422.933 182.693 423.466 183.92 423.493 185.44V198H419.013V187.04C418.986 186.187 418.746 185.507 418.293 185C417.839 184.467 417.119 184.187 416.132 184.16C415.226 184.16 414.412 184.44 413.692 185C412.973 185.533 412.399 186.28 411.973 187.24C411.573 188.173 411.372 189.253 411.372 190.48V198H406.893V181.08H410.933ZM429.666 181.08H434.146V198H429.666V181.08ZM429.466 175.04C429.466 174.347 429.733 173.773 430.266 173.32C430.826 172.867 431.426 172.64 432.066 172.64C432.706 172.64 433.279 172.867 433.786 173.32C434.319 173.773 434.586 174.347 434.586 175.04C434.586 175.733 434.319 176.307 433.786 176.76C433.279 177.187 432.706 177.4 432.066 177.4C431.426 177.4 430.826 177.173 430.266 176.72C429.733 176.267 429.466 175.707 429.466 175.04Z" fill="#91BAC1"/>
+          <path d="M226.68 185.04C226.333 185.413 225.787 185.8 225.04 186.2C224.293 186.573 223.427 186.92 222.44 187.24C221.48 187.56 220.493 187.813 219.48 188C218.467 188.213 217.507 188.32 216.6 188.32C214.2 188.32 212.04 187.973 210.12 187.28C208.2 186.56 206.56 185.573 205.2 184.32C203.84 183.04 202.8 181.533 202.08 179.8C201.36 178.067 201 176.173 201 174.12C201 171.427 201.4 169.093 202.2 167.12C203.027 165.12 204.133 163.467 205.52 162.16C206.933 160.827 208.547 159.84 210.36 159.2C212.2 158.56 214.12 158.24 216.12 158.24C218.013 158.24 219.747 158.453 221.32 158.88C222.893 159.28 224.227 159.787 225.32 160.4L223.44 165.8C222.96 165.533 222.32 165.267 221.52 165C220.72 164.733 219.907 164.52 219.08 164.36C218.253 164.173 217.52 164.08 216.88 164.08C215.28 164.08 213.867 164.28 212.64 164.68C211.413 165.08 210.373 165.68 209.52 166.48C208.693 167.28 208.067 168.28 207.64 169.48C207.213 170.653 207 172.027 207 173.6C207 174.987 207.24 176.24 207.72 177.36C208.2 178.453 208.867 179.387 209.72 180.16C210.6 180.933 211.627 181.52 212.8 181.92C214 182.32 215.32 182.52 216.76 182.52C217.587 182.52 218.347 182.467 219.04 182.36C219.733 182.227 220.32 182.027 220.8 181.76V178.2H215.72V172.6H226.68V185.04ZM239.709 188.48C238.082 188.48 236.602 188.16 235.269 187.52C233.962 186.853 232.922 185.84 232.149 184.48C231.375 183.12 230.989 181.387 230.989 179.28C230.989 177.307 231.389 175.6 232.189 174.16C232.989 172.72 234.042 171.613 235.349 170.84C236.655 170.04 238.042 169.64 239.509 169.64C241.242 169.64 242.549 169.933 243.429 170.52C244.335 171.08 245.082 171.707 245.669 172.4L245.429 173.08L245.949 170.52H251.149V188H245.549V184.2L245.989 185.4C245.935 185.4 245.775 185.56 245.509 185.88C245.242 186.173 244.842 186.533 244.309 186.96C243.802 187.36 243.162 187.707 242.389 188C241.642 188.32 240.749 188.48 239.709 188.48ZM241.309 183.92C241.975 183.92 242.575 183.827 243.109 183.64C243.642 183.427 244.109 183.133 244.509 182.76C244.909 182.36 245.255 181.867 245.549 181.28V177C245.335 176.413 245.015 175.92 244.589 175.52C244.162 175.093 243.655 174.773 243.069 174.56C242.482 174.32 241.829 174.2 241.109 174.2C240.309 174.2 239.562 174.413 238.869 174.84C238.202 175.24 237.669 175.8 237.269 176.52C236.869 177.24 236.669 178.067 236.669 179C236.669 179.933 236.882 180.773 237.309 181.52C237.735 182.267 238.295 182.853 238.989 183.28C239.709 183.707 240.482 183.92 241.309 183.92ZM268.399 188.48C266.932 188.48 265.692 188.24 264.679 187.76C263.692 187.253 262.826 186.6 262.079 185.8L262.519 184.6V188H256.919V156.44H262.479V173.52V171.72C263.172 171.133 264.092 170.64 265.239 170.24C266.386 169.84 267.692 169.64 269.159 169.64C270.679 169.64 272.066 170 273.319 170.72C274.572 171.44 275.572 172.493 276.319 173.88C277.092 175.24 277.479 176.907 277.479 178.88C277.479 180.853 277.052 182.56 276.199 184C275.372 185.44 274.266 186.547 272.879 187.32C271.492 188.093 269.999 188.48 268.399 188.48ZM267.159 183.76C267.986 183.76 268.746 183.547 269.439 183.12C270.159 182.693 270.732 182.107 271.159 181.36C271.586 180.613 271.799 179.773 271.799 178.84C271.799 177.907 271.586 177.08 271.159 176.36C270.732 175.64 270.159 175.08 269.439 174.68C268.746 174.253 267.986 174.04 267.159 174.04C266.439 174.04 265.759 174.16 265.119 174.4C264.506 174.613 263.972 174.933 263.519 175.36C263.092 175.76 262.759 176.253 262.519 176.84V181.12C262.839 181.707 263.212 182.2 263.639 182.6C264.092 182.973 264.612 183.267 265.199 183.48C265.786 183.667 266.439 183.76 267.159 183.76ZM286.92 170.52L287.44 175.32L287.32 174.6C287.827 173.56 288.52 172.68 289.4 171.96C290.28 171.213 291.147 170.64 292 170.24C292.88 169.84 293.547 169.64 294 169.64L293.72 175.24C292.413 175.08 291.293 175.293 290.36 175.88C289.427 176.467 288.707 177.24 288.2 178.2C287.693 179.16 287.44 180.147 287.44 181.16V188H281.88V170.52H286.92ZM303.926 188.84C302.353 188.84 301.033 188.36 299.966 187.4C298.9 186.413 298.34 185.147 298.286 183.6V170.52H303.886V181.52C303.94 182.293 304.14 182.92 304.486 183.4C304.833 183.853 305.42 184.08 306.246 184.08C307.073 184.08 307.78 183.8 308.366 183.24C308.98 182.68 309.446 181.92 309.766 180.96C310.113 179.973 310.286 178.867 310.286 177.64V170.52H315.886V188H310.806L310.366 184.8L310.446 185.16C310.046 185.88 309.54 186.52 308.926 187.08C308.313 187.64 307.58 188.067 306.726 188.36C305.9 188.68 304.966 188.84 303.926 188.84ZM327.286 188.84C325.712 188.84 324.392 188.36 323.326 187.4C322.259 186.413 321.699 185.147 321.646 183.6V170.52H327.246V181.52C327.299 182.293 327.499 182.92 327.846 183.4C328.192 183.853 328.779 184.08 329.606 184.08C330.432 184.08 331.139 183.8 331.726 183.24C332.339 182.68 332.806 181.92 333.126 180.96C333.472 179.973 333.646 178.867 333.646 177.64V170.52H339.246V188H334.166L333.726 184.8L333.806 185.16C333.406 185.88 332.899 186.52 332.286 187.08C331.672 187.64 330.939 188.067 330.086 188.36C329.259 188.68 328.326 188.84 327.286 188.84ZM342.725 185.12C342.725 184.293 343.018 183.6 343.605 183.04C344.218 182.48 344.885 182.2 345.605 182.2C346.272 182.2 346.898 182.48 347.485 183.04C348.098 183.6 348.405 184.293 348.405 185.12C348.405 186 348.098 186.707 347.485 187.24C346.898 187.747 346.272 188 345.605 188C344.885 188 344.218 187.747 343.605 187.24C343.018 186.707 342.725 186 342.725 185.12Z" fill="#D5C5AA"/>
+        </svg>
+      </a>
+
+      <!-- Center: Section Navigation Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Computer Science</a>
+        <a href="#credentials" class="nav-link">Credentials</a>
+        <a href="#connect" class="nav-link">Connect</a>
+      </nav>
+
+      <!-- Right: Subdomain Lock CTA Pill -->
+      <div class="nav-actions">
+        <a href="https://cs.gabruu-saini.online" target="_blank" rel="noopener noreferrer" class="nav-cta-pill" title="Launch ISC Computer Science Platform">
+          <span class="cta-pulse-dot" aria-hidden="true"></span>
+          <span class="cta-text-full">cs.gabruu-saini.online ↗</span>
+          <span class="cta-text-short">CS Suite ↗</span>
+        </a>
+        <button id="btn-mobile-menu" class="btn-hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Glass Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer glass-panel" aria-hidden="true">
+    <nav class="drawer-nav">
+      <a href="#about" class="drawer-link">About</a>
+      <a href="#skills" class="drawer-link">Computer Science</a>
+      <a href="#credentials" class="drawer-link">Credentials</a>
+      <a href="#connect" class="drawer-link">Connect</a>
+      <div class="drawer-divider"></div>
+      <a href="https://cs.gabruu-saini.online" target="_blank" rel="noopener noreferrer" class="drawer-cta-btn">
+        <span>Open cs.gabruu-saini.online ↗</span>
+      </a>
+    </nav>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ====================================================================
+         HERO SECTION: Active Cosmic Pulsar Horizon & Personal Console
+         ==================================================================== -->
+    <section id="hero" class="hero-section">
+      <!-- Dark Radial Scrim Behind Hero Text for Maximum Typography Contrast -->
+      <div class="hero-scrim" aria-hidden="true"></div>
+
+      <div class="hero-container">
+
+        <!-- Role Eyebrow Badges -->
+        <div class="hero-eyebrow-group">
+          <span class="eyebrow-pill violet">
+            <span class="pill-dot"></span>
+            Computer Science
+          </span>
+          <span class="eyebrow-pill teal">
+            <span class="pill-dot"></span>
+            Rust Developer
+          </span>
+          <span class="eyebrow-pill cyan">
+            <span class="pill-dot"></span>
+            Backend Developer
+          </span>
+          <span class="eyebrow-pill emerald">
+            <span class="pill-dot"></span>
+            Cybersecurity Analyst
+          </span>
+          <span class="eyebrow-pill lavender">
+            <span class="pill-dot"></span>
+            Bug Bounty Hunter
+          </span>
+        </div>
+
+        <!-- First-Person Headline & Intro -->
+        <h1 class="hero-headline">
+          Building high-concurrency systems, exploring low-level architectures, and advancing deep Computer Science fundamentals.
+        </h1>
+
+        <p class="hero-subhead">
+          I am <strong>Ashween Singh Saini (<span class="text-brand">Gabruu.Saini</span>)</strong> — a Computer Science student, systems programmer, and offensive security researcher from Hoshiarpur, Punjab, India. From mastering core algorithms to engineering memory-safe Rust services and auditing web security, Computer Science is the core foundation behind everything I build.
+        </p>
+
+        <!-- Dual Action Buttons -->
+        <div class="hero-cta-group">
+          <a href="#about" class="btn-primary-glow">
+            <span>About Me ↓</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+          </a>
+          <a href="https://cs.gabruu-saini.online" target="_blank" rel="noopener noreferrer" class="btn-secondary-glass">
+            <span>Open cs.gabruu-saini.online ↗</span>
+          </a>
+        </div>
+
+        <!-- Reflect-Style Framed Glass Console Window (whoami.sh) -->
+        <div class="console-window glass-panel" role="region" aria-label="Personal Console Window">
+          <!-- Top Window Rim / Titlebar -->
+          <div class="console-header">
+            <div class="console-dots" aria-hidden="true">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="console-title-pill">
+              <span class="console-file-icon">⚡</span>
+              <span>whoami.sh — zsh</span>
+            </div>
+            <div class="console-tabs" role="tablist">
+              <button class="console-tab-btn active" data-tab="whoami" role="tab" aria-selected="true">
+                <span class="tab-indicator"></span>
+                whoami
+              </button>
+              <button class="console-tab-btn" data-tab="cs-journey" role="tab" aria-selected="false">
+                <span class="tab-indicator"></span>
+                cs-journey
+              </button>
+              <button class="console-tab-btn" data-tab="security-lab" role="tab" aria-selected="false">
+                <span class="tab-indicator"></span>
+                security-lab
+              </button>
+            </div>
+            <div class="console-status-badge">
+              <span class="status-pulse"></span>
+              ACTIVE SHELL
+            </div>
+          </div>
+
+          <!-- Console Tab Panels -->
+          <div class="console-body">
+
+            <!-- Panel 1: whoami & Interactive Shell -->
+            <div id="panel-whoami" class="console-panel active">
+              <div class="console-profile-layout">
+                <div class="console-bio-block">
+                  <div class="bio-meta-row">
+                    <span class="meta-tag"><span class="meta-dot"></span>Identity: Ashween Singh Saini</span>
+                    <span class="meta-tag"><span class="meta-dot"></span>Callsign: Gabruu.Saini</span>
+                    <span class="meta-tag"><span class="meta-dot"></span>Location: Hoshiarpur, Punjab, IN</span>
+                  </div>
+                  <h3 class="console-heading">Core Philosophy &amp; Identity</h3>
+                  <p class="console-text">
+                    "Understand the layer beneath. Write deterministic, resilient software." Whether dissecting recursive backtracking in ISC Computer Science, writing asynchronous socket handlers in Rust, or inspecting raw TCP/IP frames, my work is driven by first-principles understanding.
+                  </p>
+                  <div class="term-preset-group">
+                    <span class="preset-label">Quick Commands:</span>
+                    <button class="term-preset-pill" data-cmd="whoami">whoami</button>
+                    <button class="term-preset-pill" data-cmd="cs">cs</button>
+                    <button class="term-preset-pill" data-cmd="certs">certs</button>
+                    <button class="term-preset-pill" data-cmd="stack">stack</button>
+                    <button class="term-preset-pill" data-cmd="clear">clear</button>
+                  </div>
+                </div>
+
+                <!-- Interactive Terminal Emulator -->
+                <div class="term-emulator-card glass-panel">
+                  <div class="term-card-titlebar">
+                    <span class="term-title-text">zsh — gabruu@saini:~</span>
+                    <span class="term-clock">pts/0</span>
+                  </div>
+                  <div id="term-output-body" class="term-output-body">
+                    <div class="term-entry">
+                      <div class="term-entry-cmd">
+                        <span class="term-prompt">gabruu@saini:~$</span>
+                        <span class="term-user-text">whoami</span>
+                      </div>
+                      <div class="term-entry-result">
+[IDENTITY &amp; PROFILE: <span class="term-green">VERIFIED</span>]
+  Full Name        : Ashween Singh Saini
+  Callsign / Brand : Gabruu.Saini
+  Location         : Hoshiarpur, Punjab, India (31.5273° N, 75.9149° E)
+  Role Focus       : Computer Science Student • Rust Systems • Offensive Security
+  Philosophy       : "Understand the layer beneath. Write deterministic, resilient software."
+  Active Platform  : <a href="https://cs.gabruu-saini.online" target="_blank" rel="noopener noreferrer" class="term-link">https://cs.gabruu-saini.online ↗</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="term-input-row">
+                    <span class="term-prompt">gabruu@saini:~$</span>
+                    <input type="text" id="term-cmd-input" class="term-cmd-input" placeholder="Type a command (try 'cs', 'certs', 'stack', 'help')..." autocomplete="off" spellcheck="false">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 2: CS Journey & Algorithmic Engineering -->
+            <div id="panel-cs-journey" class="console-panel">
+              <div class="console-story-grid">
+                <div class="story-card glass-panel">
+                  <div class="story-icon">📐</div>
+                  <h4 class="story-title">Algorithmic Foundations</h4>
+                  <p class="story-desc">
+                    Deep mastery of core computational thinking: recursion, recursive descent parsing, matrix transformations, string tokenization, dry-run variable trace matrices, and asymptotic time/space complexity analysis.
+                  </p>
+                  <div class="story-tags">
+                    <span>Recursion</span>
+                    <span>Matrices</span>
+                    <span>Linked Lists</span>
+                    <span>Time &amp; Space Complexity</span>
+                  </div>
+                </div>
+
+                <div class="story-card glass-panel">
+                  <div class="story-icon">☕</div>
+                  <h4 class="story-title">Java &amp; ISC Board Excellence</h4>
+                  <p class="story-desc">
+                    Built the live 10-Year Solved Suite indexing 53 verified Java programs (2017–2026). Engineered without package dependencies for pure standalone javac compilation and zero blue-collar BlueJ baggage.
+                  </p>
+                  <div class="story-tags">
+                    <span>Java 8/17/21</span>
+                    <span>53 Board Programs</span>
+                    <span>Zero Warnings</span>
+                    <span>ISC Class 12 CS</span>
+                  </div>
+                </div>
+
+                <div class="story-card glass-panel">
+                  <div class="story-icon">🦀</div>
+                  <h4 class="story-title">Rust &amp; Async Systems</h4>
+                  <p class="story-desc">
+                    Graduating from managed runtimes to low-level systems programming. Leveraging Rust's affine type system, borrow checker, Axum web framework, Tokio async runtime, and Portable-PTY sandbox daemons.
+                  </p>
+                  <div class="story-tags">
+                    <span>Rust</span>
+                    <span>Axum 0.7</span>
+                    <span>Tokio</span>
+                    <span>Portable-PTY</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 3: Security Lab & Systems Virtualization -->
+            <div id="panel-security-lab" class="console-panel">
+              <div class="console-story-grid">
+                <div class="story-card glass-panel">
+                  <div class="story-icon">🛡️</div>
+                  <h4 class="story-title">Offensive Security &amp; Bug Bounty</h4>
+                  <p class="story-desc">
+                    Active vulnerability research across web applications, REST APIs, and authentication flows. Methodical OWASP Top 10 auditing, automated subdomain enumeration, parameter tampering, and responsible disclosure.
+                  </p>
+                  <div class="story-tags">
+                    <span>OWASP Top 10</span>
+                    <span>Burp Suite Pro</span>
+                    <span>API Auditing</span>
+                    <span>Vulnerability Discovery</span>
+                  </div>
+                </div>
+
+                <div class="story-card glass-panel">
+                  <div class="story-icon">🐧</div>
+                  <h4 class="story-title">CachyOS Linux &amp; Kernel Tinkering</h4>
+                  <p class="story-desc">
+                    Daily-driving CachyOS Linux (KDE Plasma) tuned with the BORE scheduler and Clang-optimized packages. Writing shell daemons, systemd unit files, and custom kernel parameters for ultra-low audio and process latency.
+                  </p>
+                  <div class="story-tags">
+                    <span>CachyOS</span>
+                    <span>KDE Plasma</span>
+                    <span>systemd</span>
+                    <span>Zsh &amp; Bash</span>
+                  </div>
+                </div>
+
+                <div class="story-card glass-panel">
+                  <div class="story-icon">🔬</div>
+                  <h4 class="story-title">KVM/QEMU Isolation Lab</h4>
+                  <p class="story-desc">
+                    Self-contained virtualization lab for safe malware dissection, protocol fuzzing, and Active Directory target emulation. PCI pass-through, virtio-net tap interfaces, and isolated host-only subnets.
+                  </p>
+                  <div class="story-tags">
+                    <span>KVM / QEMU</span>
+                    <span>virt-manager</span>
+                    <span>Wireshark</span>
+                    <span>Network Segmentation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: MY STORY & COMPUTER SCIENCE PHILOSOPHY (#about)
+         ==================================================================== -->
+    <section id="about" class="about-section">
+      <div class="section-container">
+        <div class="section-badge-center">
+          <span class="section-eyebrow">
+            <span class="eyebrow-spark">✦</span>
+            My Story
+          </span>
+        </div>
+        <h2 class="section-headline">
+          Computer Science is the unifying thread behind everything I create.
+        </h2>
+
+        <!-- Reflect-Style Editorial Narrative Card -->
+        <article class="narrative-card glass-panel">
+          <div class="narrative-content">
+            <p class="narrative-lead">
+              I am Ashween Singh Saini, based in Hoshiarpur, Punjab. For me, Computer Science has never been just code syntax or exam marks—it is the study of how information moves, how complexity behaves under constraint, and how deterministic logic creates resilient systems in an unpredictable world.
+            </p>
+
+            <div class="narrative-columns">
+              <div class="narrative-col">
+                <h3 class="narrative-subheading">From First Principles to Clean Algorithms</h3>
+                <p>
+                  My journey began with deep immersion in ISC Class 12 Computer Science theory: mastering recursion trees, multidimensional matrix transformations, composite object relationships, and the mathematics of algorithm complexity. I built the 53-program ISC CS Compendium not just as a reference, but as an interactive sandbox to prove that even classical board curriculum can be rendered with modern engineering craft.
+                </p>
+                <p>
+                  Understanding recursion at the stack-frame level and tracing variables through dry-run tables taught me discipline: code is meant to be verified, predictable, and clean.
+                </p>
+              </div>
+
+              <div class="narrative-col">
+                <h3 class="narrative-subheading">Systems, Concurrency &amp; Defensive Mindset</h3>
+                <p>
+                  That discipline led me naturally to Rust and backend systems. Moving away from garbage collection into Rust's ownership model reshaped my thinking about resource management, thread safety, and zero-cost abstractions. Concurrently, studying for CompTIA Network+, Cisco CCNA, and CompTIA PenTest+ gave me an appreciation for the wire: how packets traverse switches, how TLS handshakes defend data in flight, and where systems fail when assumptions break.
+                </p>
+                <p>
+                  When you know how a network packet is assembled from Layer 2 to Layer 7, you become both a better systems engineer and a sharper security researcher.
+                </p>
+              </div>
+            </div>
+
+            <div class="narrative-footer">
+              <div class="philosophy-quote">
+                <span class="quote-symbol">“</span>
+                <em>Understand the layer beneath. Write deterministic, resilient software. Never fear the machine code.</em>
+                <span class="quote-author">— Gabruu.Saini</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: WHAT I DO — COMPUTER SCIENCE & ENGINEERING PILLARS (#skills)
+         1px Architectural Hairline Grid (4 cards desktop / 2 tablet / 1 mobile)
+         ==================================================================== -->
+    <section id="skills" class="pillars-section">
+      <div class="section-container">
+        <div class="section-badge-center">
+          <span class="section-eyebrow">
+            <span class="eyebrow-spark">✦</span>
+            Pillars of Craft
+          </span>
+        </div>
+        <h2 class="section-headline">
+          What I do across software, infrastructure, and security.
+        </h2>
+        <p class="section-subhead">
+          Four interconnected domains that define my engineering journey and technical identity.
+        </p>
+
+        <!-- 1px Hairline Grid Container -->
+        <div class="hairline-pillars-grid">
+
+          <!-- Pillar 1: Computer Science & Algorithms -->
+          <div class="pillar-cell glass-panel">
+            <div class="pillar-number">01</div>
+            <div class="pillar-icon-box violet">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              </svg>
+            </div>
+            <h3 class="pillar-title">Computer Science &amp; Algorithms</h3>
+            <p class="pillar-desc">
+              Data structures, recursion, matrix transformations, string algorithms, linked structures, and computational complexity analysis in Java, C/C++, and Kotlin. Clean object-oriented design and formal variable trace proofs.
+            </p>
+            <div class="pillar-spec-list">
+              <span class="spec-pill">Recursion Trees</span>
+              <span class="spec-pill">Matrix Algorithms</span>
+              <span class="spec-pill">ISC CS Theory</span>
+              <span class="spec-pill">OOP Architecture</span>
+            </div>
+          </div>
+
+          <!-- Pillar 2: Rust & Backend Engineering -->
+          <div class="pillar-cell glass-panel">
+            <div class="pillar-number">02</div>
+            <div class="pillar-icon-box teal">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3 class="pillar-title">Rust &amp; Backend Engineering</h3>
+            <p class="pillar-desc">
+              High-concurrency async services with Axum 0.7, Tokio event loops, WebSocket PTY compilation daemons, and low-latency edge routing on Cloudflare Workers. Memory-safe architecture without runtime garbage collection.
+            </p>
+            <div class="pillar-spec-list">
+              <span class="spec-pill">Axum &amp; Tokio</span>
+              <span class="spec-pill">Portable-PTY</span>
+              <span class="spec-pill">Workers Edge</span>
+              <span class="spec-pill">Zero-Copy I/O</span>
+            </div>
+          </div>
+
+          <!-- Pillar 3: Cybersecurity Analysis & Bug Bounty -->
+          <div class="pillar-cell glass-panel">
+            <div class="pillar-number">03</div>
+            <div class="pillar-icon-box emerald">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3 class="pillar-title">Cybersecurity &amp; Bug Bounty</h3>
+            <p class="pillar-desc">
+              Offensive reconnaissance, OWASP Top 10 auditing, packet-level traffic analysis, hardened authentication, API security testing, and responsible vulnerability disclosure across production targets.
+            </p>
+            <div class="pillar-spec-list">
+              <span class="spec-pill">OWASP Top 10</span>
+              <span class="spec-pill">Recon Automation</span>
+              <span class="spec-pill">Packet Inspection</span>
+              <span class="spec-pill">API Security</span>
+            </div>
+          </div>
+
+          <!-- Pillar 4: Linux, Virtualization & Systems -->
+          <div class="pillar-cell glass-panel">
+            <div class="pillar-number">04</div>
+            <div class="pillar-icon-box lavender">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+              </svg>
+            </div>
+            <h3 class="pillar-title">Linux, Virtualization &amp; Systems</h3>
+            <p class="pillar-desc">
+              Daily-driving CachyOS Linux (KDE Plasma) with BORE scheduler tuning, KVM/QEMU isolated testing labs, systemd automation, POSIX shell scripting, and hardware/networking experimentation.
+            </p>
+            <div class="pillar-spec-list">
+              <span class="spec-pill">CachyOS Linux</span>
+              <span class="spec-pill">KVM / QEMU</span>
+              <span class="spec-pill">systemd Daemons</span>
+              <span class="spec-pill">Hardware Lab</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: VERIFIED CREDENTIALS & CERTIFICATIONS (#credentials)
+         Custom Dark-Glass Vector Emblem Medallions with Hover Tooltips
+         ==================================================================== -->
+    <section id="credentials" class="credentials-section">
+      <div class="section-container">
+        <div class="section-badge-center">
+          <span class="section-eyebrow">
+            <span class="eyebrow-spark">✦</span>
+            Verified Credentials
+          </span>
+        </div>
+        <h2 class="section-headline">
+          Professional networking and cybersecurity certifications.
+        </h2>
+        <p class="section-subhead">
+          Rigorous third-party validation covering routing, switching, penetration testing, and enterprise IP architecture.
+        </p>
+
+        <div class="credentials-medallion-grid">
+
+          <!-- 01. CompTIA Network+ -->
+          <div class="cert-medallion glass-panel">
+            <div class="cert-emblem-wrap violet-accent">
+              <svg class="cert-vector-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="40" cy="40" r="38" stroke="rgba(139, 92, 246, 0.35)" stroke-width="1.5" stroke-dasharray="4 2"/>
+                <circle cx="40" cy="40" r="28" fill="rgba(139, 92, 246, 0.12)" stroke="rgba(167, 139, 250, 0.6)" stroke-width="1.4"/>
+                <circle cx="40" cy="24" r="5" fill="#C4B5FD" stroke="#7C3AED" stroke-width="1.8"/>
+                <circle cx="26" cy="50" r="5" fill="#C4B5FD" stroke="#7C3AED" stroke-width="1.8"/>
+                <circle cx="54" cy="50" r="5" fill="#C4B5FD" stroke="#7C3AED" stroke-width="1.8"/>
+                <circle cx="40" cy="40" r="3.5" fill="#FFFFFF"/>
+                <line x1="40" y1="29" x2="40" y2="36.5" stroke="#C4B5FD" stroke-width="1.6"/>
+                <line x1="30" y1="47" x2="37" y2="42" stroke="#C4B5FD" stroke-width="1.6"/>
+                <line x1="50" y1="47" x2="43" y2="42" stroke="#C4B5FD" stroke-width="1.6"/>
+              </svg>
+            </div>
+            <div class="cert-body">
+              <div class="cert-issuer">CompTIA Verified</div>
+              <h3 class="cert-name">CompTIA Network+</h3>
+              <p class="cert-code">Exam N10-008</p>
+              <div class="cert-tooltip-detail">
+                Network Infrastructure, Subnetting, Routing Protocols &amp; Switching
+              </div>
+            </div>
+          </div>
+
+          <!-- 02. Cisco CCNA -->
+          <div class="cert-medallion glass-panel">
+            <div class="cert-emblem-wrap teal-accent">
+              <svg class="cert-vector-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="40" cy="40" r="38" stroke="rgba(145, 186, 193, 0.35)" stroke-width="1.5" stroke-dasharray="4 2"/>
+                <circle cx="40" cy="40" r="28" fill="rgba(43, 113, 128, 0.15)" stroke="rgba(145, 186, 193, 0.6)" stroke-width="1.4"/>
+                <rect x="22" y="38" width="3.5" height="12" rx="1.5" fill="#91BAC1"/>
+                <rect x="29" y="32" width="3.5" height="18" rx="1.5" fill="#91BAC1"/>
+                <rect x="36" y="27" width="3.5" height="23" rx="1.5" fill="#BDE2DD"/>
+                <rect x="43" y="32" width="3.5" height="18" rx="1.5" fill="#91BAC1"/>
+                <rect x="50" y="38" width="3.5" height="12" rx="1.5" fill="#91BAC1"/>
+                <path d="M19 55C26 51 54 51 61 55" stroke="#91BAC1" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="cert-body">
+              <div class="cert-issuer">Cisco Systems</div>
+              <h3 class="cert-name">Cisco CCNA</h3>
+              <p class="cert-code">Exam 200-301</p>
+              <div class="cert-tooltip-detail">
+                Enterprise IP Connectivity, VLANs, OSPF Routing &amp; Network Security
+              </div>
+            </div>
+          </div>
+
+          <!-- 03. CompTIA PenTest+ -->
+          <div class="cert-medallion glass-panel">
+            <div class="cert-emblem-wrap emerald-accent">
+              <svg class="cert-vector-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="40" cy="40" r="38" stroke="rgba(52, 211, 153, 0.35)" stroke-width="1.5" stroke-dasharray="4 2"/>
+                <circle cx="40" cy="40" r="28" fill="rgba(16, 185, 129, 0.12)" stroke="rgba(52, 211, 153, 0.6)" stroke-width="1.4"/>
+                <path d="M40 23L54 28V39C54 48 48 54 40 57C32 54 26 48 26 39V28L40 23Z" fill="rgba(5, 150, 105, 0.25)" stroke="#34D399" stroke-width="1.8"/>
+                <circle cx="40" cy="39" r="6" stroke="#FFFFFF" stroke-width="1.4"/>
+                <line x1="40" y1="30" x2="40" y2="48" stroke="#34D399" stroke-width="1.3"/>
+                <line x1="31" y1="39" x2="49" y2="39" stroke="#34D399" stroke-width="1.3"/>
+              </svg>
+            </div>
+            <div class="cert-body">
+              <div class="cert-issuer">CompTIA Verified</div>
+              <h3 class="cert-name">CompTIA PenTest+</h3>
+              <p class="cert-code">Exam PT0-002</p>
+              <div class="cert-tooltip-detail">
+                Penetration Testing, Vulnerability Assessment, Exploitation &amp; Reporting
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: LIVE CS FLAGSHIP SPOTLIGHT (cs.gabruu-saini.online)
+         ==================================================================== -->
+    <section id="flagship" class="flagship-section">
+      <div class="section-container">
+        <div class="section-badge-center">
+          <span class="section-eyebrow">
+            <span class="eyebrow-spark">✦</span>
+            Live Computer Science Platform
+          </span>
+        </div>
+
+        <div class="flagship-card glass-panel">
+          <div class="flagship-content">
+            <div class="flagship-badge-row">
+              <span class="micro-badge live">LIVE PLATFORM</span>
+              <span class="micro-badge edge">CLOUDFLARE WORKERS EDGE</span>
+              <span class="micro-badge rust">RUST AXUM 0.7 PTY</span>
+            </div>
+
+            <h2 class="flagship-title">
+              ISC Class 12 Computer Science 10-Year Solved Suite
+            </h2>
+
+            <p class="flagship-description">
+              A production educational platform designed and developed by Ashween Singh Saini. Features 53 verified Java programs (2017–2026 Board Examinations), interactive dry-run variable trace matrices, BlueJ-style aesthetic terminal runner, and a unified Rust Axum + Tokio + Portable-PTY WebSocket sandbox execution daemon.
+            </p>
+
+            <!-- Responsive 3-Column Stats Grid (never clips on mobile) -->
+            <div class="flagship-stats-grid">
+              <div class="fstat-box glass-panel">
+                <span class="fstat-number">53</span>
+                <span class="fstat-label">Verified Programs</span>
+                <span class="fstat-sub">100% javac Clean Root</span>
+              </div>
+              <div class="fstat-box glass-panel">
+                <span class="fstat-number">10 Yr</span>
+                <span class="fstat-label">Board Archive</span>
+                <span class="fstat-sub">2017 to 2026 Complete</span>
+              </div>
+              <div class="fstat-box glass-panel">
+                <span class="fstat-number">Rust PTY</span>
+                <span class="fstat-label">Sandbox Engine</span>
+                <span class="fstat-sub">Axum + Tokio + ConPTY</span>
+              </div>
+            </div>
+
+            <div class="flagship-action-row">
+              <a href="https://cs.gabruu-saini.online" target="_blank" rel="noopener noreferrer" class="btn-flagship-launch">
+                <span>Open cs.gabruu-saini.online ↗</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+              <span class="flagship-note">
+                Target Board Examination: <strong>17 March 2027</strong>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: MINIMALIST COSMIC FOOTER & BLACK-HOLE HORIZON DOME (#connect)
+         ==================================================================== -->
+    <footer id="connect" class="cosmic-footer">
+
+      <!-- Reflect-Style Glowing Purple Black-Hole Horizon Dome -->
+      <div class="footer-blackhole-horizon">
+        <!-- Semicircular Black-Hole Accretion Stage (Clipped cleanly at bottom horizon) -->
+        <div class="blackhole-dome-stage">
+          <canvas id="footer-blackhole-canvas" aria-hidden="true"></canvas>
+          <div class="blackhole-ambient-glow" aria-hidden="true"></div>
+        </div>
+
+        <!-- Footer Foreground Closing CTA (Positioned cleanly into/above upper halo) -->
+        <div class="footer-cta-card">
+          <div class="footer-cta-badge">
+            <span class="cta-sparkle">✦</span>
+            Ashween Singh Saini • Gabruu.Saini
+          </div>
+          <h2 class="footer-cta-headline">
+            Architecting resilient systems, mastering algorithms, and exploring deep offensive security.
+          </h2>
+          <p class="footer-cta-subhead">
+            Explore the live ISC Computer Science 10-Year Solved Suite or connect for systems architecture and vulnerability research.
+          </p>
+          <div class="footer-cta-actions">
+            <a href="https://cs.gabruu-saini.online" target="_blank" rel="noopener noreferrer" class="btn-primary-glow btn-footer-launch">
+              <span>Open cs.gabruu-saini.online ↗</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Full-Width 1px Horizon Line -->
+        <div class="footer-horizon-divider" aria-hidden="true"></div>
+      </div>
+
+      <!-- Downward Radial Purple Bloom Wash across footer columns below horizon line -->
+      <div class="footer-downward-bloom" aria-hidden="true"></div>
+
+      <div class="footer-container">
+        <div class="footer-grid">
+
+          <!-- Col 1: Identity & Subdomain Lock -->
+          <div class="footer-col brand-col">
+            <div class="footer-brand-title">Ashween Singh Saini</div>
+            <p class="footer-bio-text">
+              Computer Science student, systems programmer, and offensive security researcher based in Hoshiarpur, Punjab, India.
+            </p>
+            <div class="footer-subdomain-pill">
+              <span class="footer-dot"></span>
+              <a href="https://cs.gabruu-saini.online" target="_blank" rel="noopener noreferrer">
+                cs.gabruu-saini.online
+              </a>
+            </div>
+          </div>
+
+          <!-- Col 2: Navigation Links -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Navigation</h4>
+            <a href="#about" class="footer-link">About Me</a>
+            <a href="#skills" class="footer-link">Computer Science Pillars</a>
+            <a href="#credentials" class="footer-link">Verified Credentials</a>
+            <a href="#flagship" class="footer-link">CS 10-Year Suite</a>
+          </div>
+
+          <!-- Col 3: Direct Links & Resources -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Platforms</h4>
+            <a href="https://cs.gabruu-saini.online" target="_blank" rel="noopener noreferrer" class="footer-link special">
+              <span>cs.gabruu-saini.online ↗</span>
+            </a>
+            <a href="https://gabruu-saini.online" class="footer-link">
+              <span>gabruu-saini.online</span>
+            </a>
+            <a href="https://github.com/gabruu-saini" target="_blank" rel="noopener noreferrer" class="footer-link">
+              <span>github.com/gabruu-saini ↗</span>
+            </a>
+          </div>
+
+          <!-- Col 4: Certifications & Contact -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Credentials</h4>
+            <span class="footer-meta-item">CompTIA Network+ (N10-008)</span>
+            <span class="footer-meta-item">Cisco CCNA (200-301)</span>
+            <span class="footer-meta-item">CompTIA PenTest+ (PT0-002)</span>
+          </div>
+
+        </div>
+
+        <!-- Footer Bottom Bar: Scaled Vector Ribbon Signature Pill -->
+        <div class="footer-bottom-bar">
+          <div class="footer-signature-pill glass-panel">
+            <!-- Scaled Gabruu.Saini Logo (42px desktop / 36px mobile) -->
+            <svg class="footer-signature-svg" viewBox="190 126 250 108" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="foot-ribbon-g" x1="20.48" y1="21.4" x2="104.12" y2="141.47" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#152B35"/>
+                  <stop offset="0.30" stop-color="#2B535E"/>
+                  <stop offset="0.52" stop-color="#42656F"/>
+                  <stop offset="0.64" stop-color="#1B3B49"/>
+                  <stop offset="1" stop-color="#102330"/>
+                </linearGradient>
+                <linearGradient id="foot-ribbon-s" x1="102.4" y1="0" x2="102.4" y2="107" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#BDE2DD" stop-opacity="0.45"/>
+                  <stop offset="0.45" stop-color="#7BA8BA" stop-opacity="0.12"/>
+                  <stop offset="1" stop-color="#7F6CA3" stop-opacity="0.25"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(194, 126.5)">
+                <path d="M168 102C84.8327 20.1765 46.6169 40.4622 28.6267 107C-46.3326 79.126 49.6152 25.5744 49.6152 0C54.6125 6.29412 149.93 37.2353 21 75C84.9652 101.975 287 -29 168 102Z" fill="url(#foot-ribbon-g)" stroke="url(#foot-ribbon-s)" stroke-width="1.3"/>
+              </g>
+              <path d="M365.28 174.8C364.24 174.267 363.133 173.813 361.96 173.44C360.787 173.04 359.667 172.84 358.6 172.84C357.16 172.84 356.013 173.16 355.16 173.8C354.333 174.44 353.92 175.32 353.92 176.44C353.92 177.24 354.213 177.947 354.8 178.56C355.387 179.147 356.133 179.667 357.04 180.12C357.947 180.547 358.907 180.96 359.92 181.36C360.8 181.68 361.667 182.067 362.52 182.52C363.4 182.947 364.187 183.48 364.88 184.12C365.573 184.76 366.12 185.56 366.52 186.52C366.947 187.453 367.16 188.613 367.16 190C367.16 191.52 366.773 192.92 366 194.2C365.227 195.453 364.12 196.453 362.68 197.2C361.24 197.947 359.48 198.32 357.4 198.32C356.2 198.32 355.013 198.187 353.84 197.92C352.693 197.653 351.6 197.293 350.56 196.84C349.52 196.36 348.56 195.827 347.68 195.24L349.76 191.6C350.4 192.08 351.133 192.52 351.96 192.92C352.787 193.32 353.64 193.64 354.52 193.88C355.4 194.093 356.227 194.2 357 194.2C357.827 194.2 358.64 194.067 359.44 193.8C360.267 193.533 360.947 193.093 361.48 192.48C362.04 191.867 362.32 191.053 362.32 190.04C362.32 189.213 362.08 188.507 361.6 187.92C361.12 187.333 360.493 186.827 359.72 186.4C358.973 185.947 358.147 185.547 357.24 185.2C356.333 184.853 355.4 184.467 354.44 184.04C353.507 183.613 352.64 183.093 351.84 182.48C351.04 181.84 350.387 181.067 349.88 180.16C349.373 179.253 349.12 178.133 349.12 176.8C349.12 175.2 349.493 173.813 350.24 172.64C350.987 171.467 352.013 170.533 353.32 169.84C354.653 169.147 356.187 168.773 357.92 168.72C359.973 168.72 361.72 168.973 363.16 169.48C364.627 169.96 365.92 170.547 367.04 171.24L365.28 174.8ZM379.481 198.44C377.881 198.44 376.428 198.107 375.121 197.44C373.841 196.773 372.828 195.787 372.081 194.48C371.335 193.147 370.961 191.507 370.961 189.56C370.961 187.64 371.348 186 372.121 184.64C372.921 183.253 373.961 182.187 375.241 181.44C376.548 180.693 377.961 180.32 379.481 180.32C381.108 180.32 382.415 180.64 383.401 181.28C384.415 181.92 385.201 182.68 385.761 183.56L385.521 184.2L385.961 181.08H390.081V198H385.601V193.88L386.041 194.96C385.935 195.12 385.721 195.387 385.401 195.76C385.081 196.107 384.641 196.493 384.081 196.92C383.521 197.347 382.855 197.707 382.081 198C381.335 198.293 380.468 198.44 379.481 198.44ZM380.721 194.76C381.521 194.76 382.241 194.613 382.881 194.32C383.548 194.027 384.108 193.613 384.561 193.08C385.041 192.547 385.388 191.907 385.601 191.16V187.48C385.388 186.787 385.041 186.187 384.561 185.68C384.081 185.147 383.495 184.733 382.801 184.44C382.135 184.147 381.388 184 380.561 184C379.655 184 378.815 184.227 378.041 184.68C377.268 185.133 376.641 185.76 376.161 186.56C375.708 187.36 375.481 188.28 375.481 189.32C375.481 190.333 375.721 191.253 376.201 192.08C376.681 192.907 377.321 193.56 378.121 194.04C378.921 194.52 379.788 194.76 380.721 194.76ZM396.268 181.08H400.748V198H396.268V181.08ZM396.068 175.04C396.068 174.347 396.334 173.773 396.868 173.32C397.428 172.867 398.028 172.64 398.667 172.64C399.307 172.64 399.881 172.867 400.388 173.32C400.921 173.773 401.188 174.347 401.188 175.04C401.188 175.733 400.921 176.307 400.388 176.76C399.881 177.187 399.307 177.4 398.667 177.4C398.028 177.4 397.428 177.173 396.868 176.72C396.334 176.267 396.068 175.707 396.068 175.04ZM410.933 181.08L411.332 184.72L411.173 184.24C411.759 183.067 412.626 182.133 413.772 181.44C414.946 180.72 416.333 180.36 417.933 180.36C419.533 180.36 420.853 180.827 421.893 181.76C422.933 182.693 423.466 183.92 423.493 185.44V198H419.013V187.04C418.986 186.187 418.746 185.507 418.293 185C417.839 184.467 417.119 184.187 416.132 184.16C415.226 184.16 414.412 184.44 413.692 185C412.973 185.533 412.399 186.28 411.973 187.24C411.573 188.173 411.372 189.253 411.372 190.48V198H406.893V181.08H410.933ZM429.666 181.08H434.146V198H429.666V181.08ZM429.466 175.04C429.466 174.347 429.733 173.773 430.266 173.32C430.826 172.867 431.426 172.64 432.066 172.64C432.706 172.64 433.279 172.867 433.786 173.32C434.319 173.773 434.586 174.347 434.586 175.04C434.586 175.733 434.319 176.307 433.786 176.76C433.279 177.187 432.706 177.4 432.066 177.4C431.426 177.4 430.826 177.173 430.266 176.72C429.733 176.267 429.466 175.707 429.466 175.04Z" fill="#91BAC1"/>
+              <path d="M226.68 185.04C226.333 185.413 225.787 185.8 225.04 186.2C224.293 186.573 223.427 186.92 222.44 187.24C221.48 187.56 220.493 187.813 219.48 188C218.467 188.213 217.507 188.32 216.6 188.32C214.2 188.32 212.04 187.973 210.12 187.28C208.2 186.56 206.56 185.573 205.2 184.32C203.84 183.04 202.8 181.533 202.08 179.8C201.36 178.067 201 176.173 201 174.12C201 171.427 201.4 169.093 202.2 167.12C203.027 165.12 204.133 163.467 205.52 162.16C206.933 160.827 208.547 159.84 210.36 159.2C212.2 158.56 214.12 158.24 216.12 158.24C218.013 158.24 219.747 158.453 221.32 158.88C222.893 159.28 224.227 159.787 225.32 160.4L223.44 165.8C222.96 165.533 222.32 165.267 221.52 165C220.72 164.733 219.907 164.52 219.08 164.36C218.253 164.173 217.52 164.08 216.88 164.08C215.28 164.08 213.867 164.28 212.64 164.68C211.413 165.08 210.373 165.68 209.52 166.48C208.693 167.28 208.067 168.28 207.64 169.48C207.213 170.653 207 172.027 207 173.6C207 174.987 207.24 176.24 207.72 177.36C208.2 178.453 208.867 179.387 209.72 180.16C210.6 180.933 211.627 181.52 212.8 181.92C214 182.32 215.32 182.52 216.76 182.52C217.587 182.52 218.347 182.467 219.04 182.36C219.733 182.227 220.32 182.027 220.8 181.76V178.2H215.72V172.6H226.68V185.04ZM239.709 188.48C238.082 188.48 236.602 188.16 235.269 187.52C233.962 186.853 232.922 185.84 232.149 184.48C231.375 183.12 230.989 181.387 230.989 179.28C230.989 177.307 231.389 175.6 232.189 174.16C232.989 172.72 234.042 171.613 235.349 170.84C236.655 170.04 238.042 169.64 239.509 169.64C241.242 169.64 242.549 169.933 243.429 170.52C244.335 171.08 245.082 171.707 245.669 172.4L245.429 173.08L245.949 170.52H251.149V188H245.549V184.2L245.989 185.4C245.935 185.4 245.775 185.56 245.509 185.88C245.242 186.173 244.842 186.533 244.309 186.96C243.802 187.36 243.162 187.707 242.389 188C241.642 188.32 240.749 188.48 239.709 188.48ZM241.309 183.92C241.975 183.92 242.575 183.827 243.109 183.64C243.642 183.427 244.109 183.133 244.509 182.76C244.909 182.36 245.255 181.867 245.549 181.28V177C245.335 176.413 245.015 175.92 244.589 175.52C244.162 175.093 243.655 174.773 243.069 174.56C242.482 174.32 241.829 174.2 241.109 174.2C240.309 174.2 239.562 174.413 238.869 174.84C238.202 175.24 237.669 175.8 237.269 176.52C236.869 177.24 236.669 178.067 236.669 179C236.669 179.933 236.882 180.773 237.309 181.52C237.735 182.267 238.295 182.853 238.989 183.28C239.709 183.707 240.482 183.92 241.309 183.92ZM268.399 188.48C266.932 188.48 265.692 188.24 264.679 187.76C263.692 187.253 262.826 186.6 262.079 185.8L262.519 184.6V188H256.919V156.44H262.479V173.52V171.72C263.172 171.133 264.092 170.64 265.239 170.24C266.386 169.84 267.692 169.64 269.159 169.64C270.679 169.64 272.066 170 273.319 170.72C274.572 171.44 275.572 172.493 276.319 173.88C277.092 175.24 277.479 176.907 277.479 178.88C277.479 180.853 277.052 182.56 276.199 184C275.372 185.44 274.266 186.547 272.879 187.32C271.492 188.093 269.999 188.48 268.399 188.48ZM267.159 183.76C267.986 183.76 268.746 183.547 269.439 183.12C270.159 182.693 270.732 182.107 271.159 181.36C271.586 180.613 271.799 179.773 271.799 178.84C271.799 177.907 271.586 177.08 271.159 176.36C270.732 175.64 270.159 175.08 269.439 174.68C268.746 174.253 267.986 174.04 267.159 174.04C266.439 174.04 265.759 174.16 265.119 174.4C264.506 174.613 263.972 174.933 263.519 175.36C263.092 175.76 262.759 176.253 262.519 176.84V181.12C262.839 181.707 263.212 182.2 263.639 182.6C264.092 182.973 264.612 183.267 265.199 183.48C265.786 183.667 266.439 183.76 267.159 183.76ZM286.92 170.52L287.44 175.32L287.32 174.6C287.827 173.56 288.52 172.68 289.4 171.96C290.28 171.213 291.147 170.64 292 170.24C292.88 169.84 293.547 169.64 294 169.64L293.72 175.24C292.413 175.08 291.293 175.293 290.36 175.88C289.427 176.467 288.707 177.24 288.2 178.2C287.693 179.16 287.44 180.147 287.44 181.16V188H281.88V170.52H286.92ZM303.926 188.84C302.353 188.84 301.033 188.36 299.966 187.4C298.9 186.413 298.34 185.147 298.286 183.6V170.52H303.886V181.52C303.94 182.293 304.14 182.92 304.486 183.4C304.833 183.853 305.42 184.08 306.246 184.08C307.073 184.08 307.78 183.8 308.366 183.24C308.98 182.68 309.446 181.92 309.766 180.96C310.113 179.973 310.286 178.867 310.286 177.64V170.52H315.886V188H310.806L310.366 184.8L310.446 185.16C310.046 185.88 309.54 186.52 308.926 187.08C308.313 187.64 307.58 188.067 306.726 188.36C305.9 188.68 304.966 188.84 303.926 188.84ZM327.286 188.84C325.712 188.84 324.392 188.36 323.326 187.4C322.259 186.413 321.699 185.147 321.646 183.6V170.52H327.246V181.52C327.299 182.293 327.499 182.92 327.846 183.4C328.192 183.853 328.779 184.08 329.606 184.08C330.432 184.08 331.139 183.8 331.726 183.24C332.339 182.68 332.806 181.92 333.126 180.96C333.472 179.973 333.646 178.867 333.646 177.64V170.52H339.246V188H334.166L333.726 184.8L333.806 185.16C333.406 185.88 332.899 186.52 332.286 187.08C331.672 187.64 330.939 188.067 330.086 188.36C329.259 188.68 328.326 188.84 327.286 188.84ZM342.725 185.12C342.725 184.293 343.018 183.6 343.605 183.04C344.218 182.48 344.885 182.2 345.605 182.2C346.272 182.2 346.898 182.48 347.485 183.04C348.098 183.6 348.405 184.293 348.405 185.12C348.405 186 348.098 186.707 347.485 187.24C346.898 187.747 346.272 188 345.605 188C344.885 188 344.218 187.747 343.605 187.24C343.018 186.707 342.725 186 342.725 185.12Z" fill="#D5C5AA"/>
+            </svg>
+            <span class="footer-signature-text">Built by Gabruu.Saini</span>
+          </div>
+          <div class="footer-copy-text">
+            © 2026 Ashween Singh Saini. All rights reserved. Designed with Reflect Cosmic Obsidian Glass.
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="pulsar.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

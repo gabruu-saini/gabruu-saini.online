@@ -1,0 +1,19 @@
+name = "gabruu-saini-online"
+compatibility_date = "2024-12-01"
+
+[assets]
+directory = "."
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+
+[observability]
+enabled = true
+
+[observability.logs]
+enabled = true
+invocation_logs = true
+persist = true
+
+[dev]
+port = 8790
+local_protocol = "http"

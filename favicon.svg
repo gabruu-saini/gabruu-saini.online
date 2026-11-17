@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="fav-ribbon" x1="20" y1="20" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#152B35"/>
+      <stop offset="0.30" stop-color="#2B535E"/>
+      <stop offset="0.52" stop-color="#42656F"/>
+      <stop offset="0.64" stop-color="#1B3B49"/>
+      <stop offset="1" stop-color="#102330"/>
+    </linearGradient>
+    <linearGradient id="fav-border" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#91BAC1" stop-opacity="0.6"/>
+      <stop offset="0.5" stop-color="#7C3AED" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#91BAC1" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Squircle -->
+  <rect width="100" height="100" rx="26" fill="#030014"/>
+  <rect width="98" height="98" x="1" y="1" rx="25" fill="none" stroke="url(#fav-border)" stroke-width="1.8"/>
+  
+  <!-- Folded Ribbon Background Motif -->
+  <path transform="translate(6, 26) scale(0.43)" d="M168 102C84.8327 20.1765 46.6169 40.4622 28.6267 107C-46.3326 79.126 49.6152 25.5744 49.6152 0C54.6125 6.29412 149.93 37.2353 21 75C84.9652 101.975 287 -29 168 102Z" fill="url(#fav-ribbon)" stroke="#BDE2DD" stroke-opacity="0.5" stroke-width="2"/>
+  
+  <!-- Monogram G. (Warm cream & cyan-teal) -->
+  <text x="49" y="63" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="800" font-size="44" letter-spacing="-1" text-anchor="middle" dominant-baseline="middle">
+    <tspan fill="#D5C5AA">G</tspan><tspan fill="#91BAC1">.</tspan>
+  </text>
+</svg>
