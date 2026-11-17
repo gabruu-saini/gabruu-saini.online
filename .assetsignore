@@ -1,0 +1,6 @@
+.git
+.gitignore
+.assetsignore
+serve.js
+wrangler.toml
+README.md
